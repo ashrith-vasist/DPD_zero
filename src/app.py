@@ -39,6 +39,10 @@ class Data(db.Model):
 
 User.data = db.relationship('Data', back_populates="user")
 
+@app.route("/")
+def index():
+    return "Hello World"
+
 @app.route("/api/register", methods=["POST", "GET"])
 def register():
     if request.method == "POST":
