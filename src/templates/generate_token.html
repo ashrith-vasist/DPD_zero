@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='generate_token.css') }}">
+<div class="container">
+    <h2>Generate Access Token</h2>
+    <form id="tokenForm" method="POST" action="/api/token">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Generate Token</button>
+    </form>
+
+    {% if message %}
+    <div class="message {{ message['status'] }}">
+        <p>{{ message['message'] }}</p>
+        {% if message['data'] %}
+        <ul>
+            <li>Access Token: <p>{{ message['data']['access_token'] }}</p></li>
+            <li>Expires In: {{ message['data']['expires_in'] }} seconds</li>
+        </ul>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}

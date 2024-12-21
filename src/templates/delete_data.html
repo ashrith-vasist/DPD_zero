@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='delete_data.css') }}">
+<div class="container">
+    <h2>Delete Data</h2>
+
+    <!-- Form to delete data -->
+    <form action="{{ url_for('delete_data') }}" method="post">
+        <div class="form-group">
+            <label for="key">Enter Key to Delete:</label>
+            <input type="text" id="key" name="key" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+
+    <!-- Display messages if any -->
+    {% if message %}
+    <div class="alert {% if message['status'] == 'success' %}alert-success{% else %}alert-danger{% endif %}" role="alert">
+        <p>{{ message['message'] }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='store_data.css') }}">
+<div class="container">
+    <h2>Store Data</h2>
+    <form action="/api/data" method="POST">
+        <div class="form-group">
+            <label for="key">Key:</label>
+            <input type="text" class="form-control" id="key" name="key" placeholder="Enter key" required>
+        </div>
+        <div class="form-group">
+            <label for="value">Value:</label>
+            <input type="text" class="form-control" id="value" name="value" placeholder="Enter value" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!-- Display success or error message -->
+    {% if message %}
+    <div class="alert alert-{{ 'success' if message['status'] == 'success' else 'danger' }} mt-3">
+        <p>{{ message['message'] }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}

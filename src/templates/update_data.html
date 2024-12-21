@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='update_data.css') }}">
+<div class="container">
+    <h2>Update Data</h2>
+
+    <!-- Form to update data -->
+    <form action="{{ url_for('update_data', key='') }}" method="post">
+        <div class="form-group">
+            <label for="key">Enter Key:</label>
+            <input type="text" id="key" name="key" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="value">Enter New Value:</label>
+            <input type="text" id="value" name="value" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+
+    <!-- Display messages if any -->
+    {% if message %}
+    <div class="message {{ message['status'] }}">
+        <p>{{ message['message'] }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}
