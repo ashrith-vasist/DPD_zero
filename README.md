@@ -1,6 +1,6 @@
 # Key-Value Store API with Flask
 
-A secure and scalable REST API built with Flask that implements a key-value store with user authentication and session management.
+A secure REST API built with Flask that implements a key-value store with user authentication and session management.
 
 ## 📋 Table of Contents
 - [Features](#features)
@@ -133,8 +133,8 @@ CREATE TABLE data (
 ### Local Setup
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <project-directory>
+   git clone https://github.com/ashrith-vasist/DPD_zero.git
+   cd DPD_zero
    ```
 
 2. Create a `.env` file (optional):
@@ -170,6 +170,28 @@ CREATE TABLE data (
    python app.py
    ```
 
+### Maunal Setup (Using Make)
+
+```bash
+   #Create virtual environment
+   make virtualenv
+   
+   #activate virtual environemnt
+   make activate
+
+   #install dependecies 
+   make install
+
+   #run the project
+   make run
+
+   #deactivate virtual environment
+   make deactivate
+
+   #delete venv
+   make clean
+```
+
 ## 🔧 Running the Application
 
 ### Using Docker
@@ -192,15 +214,15 @@ python app.py
 ### Using Make and Docker
 ```bash
    #  build the application
-   make build
+   make build_docker
    # run the application
-   make run
+   make run_docker
    # stop the application
-   make stop
+   make stop_docker
    # remove the container
-   make remove
+   make remove_docker
    # remove the image
-   make removei
+   make removei_docker
 
 ```
 
