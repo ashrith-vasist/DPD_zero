@@ -175,9 +175,8 @@ CREATE TABLE data (
 ```bash
    #Create virtual environment
    make virtualenv
-   
-   #activate virtual environemnt
-   make activate
+   #After this , few commands will be shown 
+   #Just execute that command to activate the virtual environment   
 
    #install dependecies 
    make install

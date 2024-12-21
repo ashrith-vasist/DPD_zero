@@ -21,13 +21,11 @@ remove_docker:
 remove_image:
 	@docker rmi $(IMAGE_NAME)
 
-# Create virtual environment
 virtualenv:
-	@python3 -m venv .venv
-
-venv:
 	python3 -m venv .venv
-	@echo "Run 'source .venv/bin/activate' to activate virtual environment"
+	@echo "\nVirtual environment created. Now run:"
+	@echo "  source .venv/bin/activate  (Linux/Mac)"
+	@echo "  .\.venv\Scripts\activate   (Windows)"
 
 install:
 	pip install -r requirements.txt
