@@ -1,6 +1,6 @@
 # Key-Value Store API with Flask
 
-A secure and scalable REST API built with Flask that implements a key-value store with user authentication and session management.
+
 
 ## 📋 Table of Contents
 - [Features](#features)
