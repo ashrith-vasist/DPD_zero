@@ -25,21 +25,15 @@ remove_image:
 virtualenv:
 	@python3 -m venv .venv
 
-# Activate virtual environment (using bash shell explicitly)
-activate:
-	@bash -c "source .venv/bin/activate && exec bash"
+venv:
+	python3 -m venv .venv
+	@echo "Run 'source .venv/bin/activate' to activate virtual environment"
 
-# Install dependencies from requirements.txt
 install:
-	@pip install -r requirements.txt
+	pip install -r requirements.txt
 
-# Run the Flask app
-run:
-	@python3 src/app.py runserver
-
-# Deactivate virtual environment
-deactivate:
-	@deactivate
+start:
+	python3 src/app.py
 
 # Clean up virtual environment
 clean:
