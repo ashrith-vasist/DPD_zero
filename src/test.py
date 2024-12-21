@@ -6,6 +6,7 @@ from flask import session
 from app import app, db, User, Data
 from flask_jwt_extended import create_access_token
 
+#the database if for testing 
 class FlaskAppTests(unittest.TestCase):
     def setUp(self):
         app.config['TESTING'] = True
@@ -16,7 +17,7 @@ class FlaskAppTests(unittest.TestCase):
         self.ctx = app.app_context()
         self.ctx.push()
         db.create_all()
-
+    #here the database is dropped after the test
     def tearDown(self):
         db.session.remove()
         db.drop_all()
