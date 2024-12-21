@@ -25,9 +25,9 @@ remove_image:
 virtualenv:
 	@python3 -m venv .venv
 
-# Activate virtual environment
+# Activate virtual environment (using bash shell explicitly)
 activate:
-	@source .venv/bin/activate
+	@bash -c "source .venv/bin/activate && exec bash"
 
 # Install dependencies from requirements.txt
 install:
